@@ -20,9 +20,9 @@ class ProductsTableSeeder extends Seeder
     {
         for($i = 0; $i < 10; $i++){
             $newProject = new Product();
-            $newProject->name = $faker->name();
+            $newProject->name = $faker->word();
             $newProject->description = $faker->sentence();
-            $newProject->price = $faker->randomFloat(2); 
+            $newProject->price = $faker->randomNumber(3); 
             $newProject->quantity = $faker->randomNumber(4);
             $newProject->category = $faker->word();
             $newProject->save();
