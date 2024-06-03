@@ -2,8 +2,12 @@
 
 namespace Database\Seeders;
 
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Product;
+use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 class ProductsTableSeeder extends Seeder
 {
@@ -12,8 +16,16 @@ class ProductsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-        //
+        for($i = 0; $i < 10; $i++){
+            $newProject = new Product();
+            $newProject->name = $faker->name();
+            $newProject->description = $faker->sentence();
+            $newProject->price = $faker->randomFloat(2); 
+            $newProject->quantity = $faker->randomNumber(4);
+            $newProject->category = $faker->word();
+            $newProject->save();
+        }
     }
 }
