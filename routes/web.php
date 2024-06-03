@@ -26,7 +26,7 @@ Route::middleware(['auth', 'verified'])
 ->group(function() {
     // Le varie rotte di amministrazione
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('products', ProductController::class);
+    // Route::resource('products', ProductController::class);
 });
 
 Route::middleware('auth')->group(function () {
