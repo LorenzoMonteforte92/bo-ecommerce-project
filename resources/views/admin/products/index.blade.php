@@ -28,7 +28,7 @@
             <td>
                 <a href="{{  route('admin.products.show', ['product' => $product->id])}}"><i class="fa-regular fa-eye"></i></a>
 
-                <div>
+                {{-- <div>
                   <form id="delete-form-{{ $product->id }}"
                       action="{{ route('admin.product.destroy', ['product' => $product->id]) }}"
                       method="POST">
@@ -38,7 +38,7 @@
                           <i class="fa-solid fa-trash"></i>
                       </a>
                   </form>
-              </div>
+              </div> --}}
             </td>
             <td>
               <a href="{{  route('admin.products.edit', ['product' => $product->id])}}"><i class="fa-solid fa-pen"></i></a>
