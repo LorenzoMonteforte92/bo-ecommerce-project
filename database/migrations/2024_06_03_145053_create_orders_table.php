@@ -21,6 +21,11 @@ return new class extends Migration
             $table->string('metodo_pagamento');
             $table->string('stato_pagamento');
             $table->timestamps();
+
+            $table->foreign('id')
+            ->references('id')
+            ->on('clients')
+            ->onDelete('set null');
         });
     }
 
@@ -31,6 +36,11 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('orders', function (Blueprint $table){
+
+            $table->dropForeign('orders_user_id_foreign');
+            
+            $table->dropColumn('user_id');
+        });
     }
 };
