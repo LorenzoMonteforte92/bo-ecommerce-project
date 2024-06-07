@@ -55,12 +55,12 @@
                             </li>
                             <li class="nav-item" >
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.products.index' ? 'bg-secondary' : '' }}" href="{{ route('admin.products.index') }}">
-                                    <i class="fa-solid fa-newspaper"></i> My Projects
+                                    <i class="fa-solid fa-newspaper"></i> My Products
                                 </a>
                             </li>
                             <li class="nav-item" >
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.products.create' ? 'bg-secondary' : '' }}" href="{{ route('admin.products.create') }}">
-                                    <i class="fa-solid fa-square-plus"></i> New Project
+                                    <i class="fa-solid fa-square-plus"></i> Add Product
                                 </a>
                             </li>
                         </ul>
