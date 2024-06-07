@@ -19,14 +19,14 @@ class ProductsTableSeeder extends Seeder
     public function run(Faker $faker)
     {
         for($i = 0; $i < 10; $i++){
-            $newProject = new Product();
-            $newProject->name = $faker->word();
-            $newProject->image = 'https://picsum.photos/200/300';
-            $newProject->description = $faker->sentence();
-            $newProject->price = $faker->randomNumber(3); 
-            $newProject->quantity = $faker->randomNumber(4);
-            $newProject->category = $faker->word();
-            $newProject->save();
+            $newProduct = new Product();
+            $newProduct->name = $faker->word(2);
+            $newProduct->image = 'https://picsum.photos/200/300';
+            $newProduct->description = $faker->sentence();
+            $newProduct->price = $faker->randomNumber(3); 
+            $newProduct->quantity = $faker->randomNumber(4);
+            $newProduct->slug = Str::slug($newProduct->name, '-');
+            $newProduct->save();
         }
     }
 }
