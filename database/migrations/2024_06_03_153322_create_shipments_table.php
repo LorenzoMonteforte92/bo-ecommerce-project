@@ -21,6 +21,12 @@ return new class extends Migration
             $table->date('spedito_il'); 
             $table->date('arriva'); 
             $table->timestamps();
+
+            $table->foreign('id')
+            ->references('id')
+            ->on('orders')
+            ->onDelete('set null');
+
         });
     }
 
@@ -31,6 +37,12 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shipments');
+        Schema::dropIfExists('shipments', function (Blueprint $table){
+
+            $table->dropForeign('shipments_orders_id_foreign');
+                
+            $table->dropColumn('id');
+        });
+
     }
 };
