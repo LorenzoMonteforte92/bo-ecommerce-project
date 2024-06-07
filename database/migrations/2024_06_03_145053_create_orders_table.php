@@ -39,8 +39,9 @@ return new class extends Migration
         Schema::dropIfExists('orders', function (Blueprint $table){
 
             $table->dropForeign('orders_user_id_foreign');
-            
+
             $table->dropColumn('user_id');
+        
         });
     }
 };
