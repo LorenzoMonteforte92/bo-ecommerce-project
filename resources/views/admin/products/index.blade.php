@@ -27,6 +27,18 @@
             <td>{{$product->updated_at}}</td>
             <td>
                 <a href="{{  route('admin.products.show', ['product' => $product->id])}}"><i class="fa-regular fa-eye"></i></a>
+
+                <div>
+                  <form id="delete-form-{{ $product->id }}"
+                      action="{{ route('admin.product.destroy', ['product' => $product->id]) }}"
+                      method="POST">
+                      @csrf
+                      @method('DELETE')
+                      <a type="submit" data-product-name="{{ $product->name }}" class="js-delete-btn">
+                          <i class="fa-solid fa-trash"></i>
+                      </a>
+                  </form>
+              </div>
             </td>
         </tr>
       @endforeach
