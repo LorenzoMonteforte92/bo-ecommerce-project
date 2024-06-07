@@ -40,6 +40,9 @@
                   </form>
               </div>
             </td>
+            <td>
+              <a href="{{  route('admin.products.edit', ['product' => $product->id])}}"><i class="fa-solid fa-pen"></i></a>
+            </td>
         </tr>
       @endforeach
     </tbody>
