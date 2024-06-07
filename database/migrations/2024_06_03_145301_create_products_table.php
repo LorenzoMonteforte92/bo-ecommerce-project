@@ -20,7 +20,6 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->double('price', 6,2);
             $table->smallInteger('quantity');
-            $table->string('category');
             $table->timestamps();
         });
     }
