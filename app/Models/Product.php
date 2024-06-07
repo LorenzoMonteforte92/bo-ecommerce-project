@@ -18,6 +18,6 @@ class Product extends Model
         'description'
     ];
     public function orders() {
-        return $this->belongsToMany(Order::class);
+        return $this->belongsToMany(Order::class, 'order_product');
     }
 }

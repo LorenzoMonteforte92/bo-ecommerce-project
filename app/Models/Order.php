@@ -18,6 +18,6 @@ class Order extends Model
 
     public function shipment ()
     {
-        return $this->hasMany(Shipment::class);
+        return $this->hasMany(Shipment::class, 'order_product');
     }
 }
